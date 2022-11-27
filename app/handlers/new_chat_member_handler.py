@@ -15,10 +15,20 @@ def captchas(message):
             bot.restrict_chat_member(group, user_id, can_send_messages=False)
 
             if db.select_lang()[0] == 'ua':
-                bot.send_message(group, f'Вітаємо тебе <b>{name}</b>, щоб переконатися, що ти не <b>робот</b> пройди перевірку.\n\nВибери емодзі: 👡\n\nУ тебе <b>15</b> секунд, поспішай!', reply_markup=keyboards.key, parse_mode='html')
+                bot.send_message(
+                    group, 
+                    f'Вітаємо тебе <b>{name}</b>, щоб переконатися, що ти не <b>робот</b> пройди перевірку.\n\nВибери емодзі: 👡\n\nУ тебе <b>15</b> секунд, поспішай!', 
+                    reply_markup=keyboards.key, 
+                    parse_mode='html'
+                )
 
             if db.select_lang()[0] == 'en':
-                bot.send_message(group, f'Hello <b>{name}</b> to make sure that you are not a <b>robot</b> pass the test.\n\nChoose an emoji: 👡\n\nYou have <b>15</b> seconds, hurry up!', reply_markup=keyboards.key, parse_mode='html')
+                bot.send_message(
+                    group, 
+                    f'Hello <b>{name}</b> to make sure that you are not a <b>robot</b> pass the test.\n\nChoose an emoji: 👡\n\nYou have <b>15</b> seconds, hurry up!', 
+                    reply_markup=keyboards.key, 
+                    parse_mode='html'
+                )
 
             sleep(15)
 
