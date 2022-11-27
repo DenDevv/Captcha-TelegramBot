@@ -8,10 +8,6 @@ bot.register_message_handler(commands.bot_settings, commands=['settings'])
 
 
 @bot.message_handler(content_types=["new_chat_members"])
-def messages(message):
-    print(message.chat.id)
-
-@bot.message_handler(content_types=["new_chat_members"])
 def new_chat_member_handlers(message):
     captchas(message)
 
