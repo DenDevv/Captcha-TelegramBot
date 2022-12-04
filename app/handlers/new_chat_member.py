@@ -39,7 +39,7 @@ class CaptchaHandler:
                 reply_markup=kb.captcha_kb()[0]
             )
 
-            Thread(target=self.check_captcha, args=[user_id, bot, name, group, message, lang]).start()
+            Thread(target=self.check_captcha, args=[user_id, bot, name, group, message, lang], daemon=True).start()
 
     def check_captcha(self, user_id, bot, name, group, message, lang):
         sleep(15)

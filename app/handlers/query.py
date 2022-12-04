@@ -44,7 +44,7 @@ class CaptchaQueryHadnler:
                     bot.answer_callback_query(
                         callback_query_id=call.id, 
                         show_alert=True, 
-                        text=dev_config.settings[lang][11]
+                        text=dev_config.settings[lang][11].format(name)
                     )
                 return
 
